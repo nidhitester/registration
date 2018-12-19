@@ -14,7 +14,7 @@ public class NopeCommerce {
 
     @Test
     public void registration_page() {
-        String expectedRegistrationSusessMessage = "Your registration completed";
+
         System.setProperty("webdriver.chrome.driver", "\\Soft\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.MILLISECONDS);
@@ -48,6 +48,8 @@ public class NopeCommerce {
         driver.findElement(By.id("Password")).sendKeys("daksh078");
         driver.findElement(By.id("ConfirmPassword")).sendKeys("daksh078");
         driver.findElement(By.id("register-button")).click();
+
+        String expectedRegistrationSusessMessage = "Your registration completed";
         String actualRegistrationSucessMessage = driver.findElement(By.xpath("//div[@class=\"result\"]")).getText();
         Assert.assertEquals("The tet case failed", expectedRegistrationSusessMessage, actualRegistrationSucessMessage);
         driver.findElement(By.xpath("//a[@href=\"/logout\"]")).click();
