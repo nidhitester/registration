@@ -23,6 +23,11 @@ public class NopeCommerce {
 
         driver.get("https://demo.nopcommerce.com/");
 
+
+
+
+
+
         driver.findElement(By.linkText("Register")).click();
         driver.findElement(By.id("gender-male")).click();
         driver.findElement(By.id("FirstName")).sendKeys("nidhi");
